@@ -1,7 +1,7 @@
-#' Function to add Norad style to ggplot2 object
+#' Function to add Norad's theme to ggplot2 graphics
 #'
 
-style_norad <- function() {
+theme_norad <- function() {
   font <- "sans"
   ggplot2::theme(
     plot.title = ggplot2::element_text(
