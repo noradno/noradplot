@@ -4,7 +4,7 @@
 \alias{norad_pal}
 \title{Return function to interpolate a Norad color palette}
 \usage{
-norad_pal(palette = "main", reverse = FALSE, ...)
+norad_pal(palette = "pal10", reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Character name of palette in norad_palettes}

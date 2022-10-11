@@ -4,7 +4,7 @@
 \alias{scale_fill_norad}
 \title{Fill scale constructor for Norad colors}
 \usage{
-scale_fill_norad(palette = "main", discrete = TRUE, reverse = FALSE, ...)
+scale_fill_norad(palette = "pal10", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Character name of palette in norad_palettes}

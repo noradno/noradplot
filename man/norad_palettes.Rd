@@ -5,7 +5,7 @@
 \alias{norad_palettes}
 \title{Combine colors into palettes}
 \format{
-An object of class \code{list} of length 2.
+An object of class \code{list} of length 21.
 }
 \usage{
 norad_palettes
