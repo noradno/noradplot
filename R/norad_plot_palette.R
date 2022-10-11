@@ -78,7 +78,7 @@ scale_fill_norad <- function(palette = "main", discrete = TRUE, reverse = FALSE,
   pal <- norad_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    ggplot2::discrete_scale("fill", paste0("drsimonj_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("fill", paste0("norad_", palette), palette = pal, ...)
   } else {
     ggplot2::scale_fill_gradientn(colours = pal(256), ...)
   }
