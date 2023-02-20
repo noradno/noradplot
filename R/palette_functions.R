@@ -7,16 +7,22 @@
 norad_cols <- function(...) {
 
   norad_colors <- c(
-    "lightgreen" = "#8AACA1",
-    "lightyellow" = "#E0B052",
-    "green" = "#23716D",
-    "yellow" = "#C1872E",
-    "black" = "#353533",
-    "lightblue" = "#86AAC2",
-    "blue" = "#437793",
-    "lightred" = "#C6836D",
-    "red" = "#9E5B4C",
-    "grey" = "#B1ACA2")
+    "green" = "#03542d",
+    "lightgreen" = "#b4eac9",
+    "darkarmy" = "#656d3a",
+    "yellow" = "#e1e11f",
+    "darkred" =  "#c47521",
+    "purple" =  "#cabdff",
+    "blue" = "#091354",
+    "pink" = "#ff8ad2",
+    "darkpurple" = "#5b0337",
+    "lightblue" = "#9acce8",
+    "orange" = "#ffa274",
+    "brown" = "#752c0c",
+    "lightpink" = "#ffd2e7",
+    "red" = "#ff570d",
+    "lightarmy" = "#c9c7a6"
+      )
 
   cols <- c(...)
 
@@ -37,20 +43,10 @@ norad_pal <- function(palette = "main", ...) {
 
   norad_palettes <- list(
     "main"  = norad_cols(),
-    "green"   = norad_cols("lightgreen"),
+    "green"   = norad_cols("green"),
     "greens"   = norad_cols("lightgreen", "green"),
-    "yellow"   = norad_cols("lightyellow"),
-    "yellows"   = norad_cols("lightyellow", "yellow"),
-    "blue"   = norad_cols("lightblue"),
-    "blues"   = norad_cols("lightblue", "blue"),
-    "red"   = norad_cols("lightred"),
-    "reds"   = norad_cols("lightred", "red"),
     "greenyellow"   = norad_cols("green", "yellow"),
-    "greenyellowlight"   = norad_cols("lightgreen", "lightyellow"),
-    "blueyellow"   = norad_cols("blue", "yellow"),
-    "blueyellowlight"   = norad_cols("lightblue", "lightyellow"),
-    "light" = norad_cols("lightgreen", "lightyellow", "lightblue", "lightred", "grey"),
-    "dark" = norad_cols("green", "yellow", "blue", "red", "black"))
+    "greenblue" = norad_cols("green", "lightblue"))
 
   norad_palettes[[palette]]
 
