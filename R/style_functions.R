@@ -59,3 +59,8 @@ theme_norad <- function() {
       axis.text.x = ggplot2::element_text(margin = margin(t = 10))
     )
 }
+
+#' @examples
+#' ggplot(mtcars, aes(factor(cyl), mpg)) +
+#' geom_bar(aes(fill = factor(cyl)), stat = "identity") +
+#'   theme_norad()
