@@ -1,7 +1,6 @@
 #' Function for using Norad's theme in ggplot2 graphics
 #'
-#'
-
+#'@name theme_norad
 sysfonts::font_add_google(name = "Arimo")
 sysfonts::font_add_google(name = "EB Garamond")
 
@@ -64,8 +63,7 @@ theme_norad <- function() {
 #' ggplot(mtcars, aes(factor(cyl), mpg)) +
 #' geom_bar(aes(fill = factor(cyl)), stat = "identity") +
 #'   theme_norad()
-
-#' @examples
+#'
 #' ggplot(mtcars, aes(factor(cyl), mpg)) +
 #' geom_bar(aes(fill = factor(cyl)), stat = "identity") +
 #'   theme_norad()
