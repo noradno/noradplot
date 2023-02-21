@@ -158,3 +158,12 @@ scale_fill_norad_c <- function(palette = "greenyellow", direction = 1, ...) {
   ggplot2::scale_fill_gradientn(colors = pal(256), ...)
 
 }
+
+#' @examples
+#' ggplot(mtcars, aes(factor(cyl), mpg)) +
+#' geom_bar(aes(fill = factor(cyl)), stat = "identity") +
+#'   scale_fill_norad(palette = "main")
+#'
+#' ggplot(mtcars, aes(wt, mpg)) +
+#'   geom_point(size = 4, aes(colour = hp)) +
+#'   scale_color_norad_c(palette = "greenyellow")

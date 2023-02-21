@@ -64,3 +64,8 @@ theme_norad <- function() {
 #' ggplot(mtcars, aes(factor(cyl), mpg)) +
 #' geom_bar(aes(fill = factor(cyl)), stat = "identity") +
 #'   theme_norad()
+
+#' @examples
+#' ggplot(mtcars, aes(factor(cyl), mpg)) +
+#' geom_bar(aes(fill = factor(cyl)), stat = "identity") +
+#'   theme_norad()
