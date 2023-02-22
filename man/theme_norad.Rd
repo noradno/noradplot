@@ -3,6 +3,9 @@
 \name{theme_norad}
 \alias{theme_norad}
 \title{Function for using Norad's theme in ggplot2 graphics}
+\usage{
+theme_norad()
+}
 \description{
 Function for using Norad's theme in ggplot2 graphics
 }
