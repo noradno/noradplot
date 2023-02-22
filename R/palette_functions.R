@@ -37,6 +37,7 @@ norad_cols <- function(...) {
 #'
 #' @param palette Character name of palette in norad_palettes
 #' @param ... Additional arguments
+#' @export
 #'
 
 norad_pal <- function(palette = "main", ...) {
@@ -103,6 +104,7 @@ palette_gen_c <- function(palette = "main", direction = 1, ...) {
 #' @param palette Character name of palette in norad_palettes
 #' @param direction Integer indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale()
+#' @export
 #'
 
 scale_color_norad <- function(palette = "main", direction = 1, ...) {
@@ -119,6 +121,7 @@ scale_color_norad <- function(palette = "main", direction = 1, ...) {
 #' @param palette Character name of palette in norad_palettes
 #' @param direction Integer indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale()
+#' @export
 #'
 
 scale_fill_norad <- function(palette = "main", direction = 1, ...) {
@@ -134,6 +137,7 @@ scale_fill_norad <- function(palette = "main", direction = 1, ...) {
 #' @param palette Character name of palette in norad_palettes
 #' @param direction Integer indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale()
+#' @export
 #'
 
 scale_color_norad_c <- function(palette = "greenyellow", direction = 1, ...) {
@@ -149,6 +153,7 @@ scale_color_norad_c <- function(palette = "greenyellow", direction = 1, ...) {
 #' @param palette Character name of palette in norad_palettes
 #' @param direction Integer indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale()
+#' @export
 #'
 
 scale_fill_norad_c <- function(palette = "greenyellow", direction = 1, ...) {
