@@ -6,6 +6,9 @@
 \usage{
 ggnorad(...)
 }
+\arguments{
+\item{...}{Additional arguments}
+}
 \description{
 Wrapper function to load norad theme
 }
