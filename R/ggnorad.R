@@ -7,17 +7,16 @@ ggnorad <- function(...) {
 
   showtext::showtext_auto()
 
-  sysfonts::font_add(family = "Arimo",
-                     regular = "fonts/Arimo-Regular.ttf",
-                     bold = "fonts/Arimo-Bold.ttf",
-                     italic = "fonts/Arimo-Italic.ttf",
-                     bolditalic = "fonts/Arimo-BoldItalic.ttf")
-  sysfonts::font_add(family = "EB Garamond",
-                     regular = "fonts/EBGaramond-Regular.ttf",
-                     bold = "fonts/EBGaramond-Bold.ttf",
-                     italic = "fonts/EBGaramond-Italic.ttf",
-                     bolditalic = "fonts/EBGaramond-BoldItalic.ttf")
-
+  sysfonts::font_add(family = "Norad Sans",
+                     regular = "fonts/NoradSans-Regular.otf",
+                     bold = "fonts/NoradSans-Bold.otf",
+                     italic = "fonts/NoradSans-Italic.otf",
+                     bolditalic = "fonts/NoradSans-BoldItalic.otf")
+  sysfonts::font_add(family = "Norad Serif",
+                     regular = "fonts/NoradSerif-Regular.otf",
+                     bold = "fonts/NoradSerif-Bold.otf",
+                     italic = "fonts/NoradSerif-Italic.otf",
+                     bolditalic = "fonts/NoradSerif-BoldItalic.otf")
   ggplot2::update_geom_defaults("path", list(linewidth = 1))
 
   ggplot2::theme_set(theme_norad())
