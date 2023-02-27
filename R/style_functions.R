@@ -1,10 +1,8 @@
+
 #' Function for using Norad's theme in ggplot2 graphics
+#'
 #'@export
 #'@name theme_norad
-sysfonts::font_add_google(name = "Arimo")
-sysfonts::font_add_google(name = "EB Garamond")
-
-ggplot2::update_geom_defaults("path", list(linewidth = 1))
 
 theme_norad <- function() {
   sans <- "Arimo"
@@ -21,7 +19,7 @@ theme_norad <- function() {
       plot.title.position = "plot",
       plot.title = ggplot2::element_text(
         family = serif,
-        size = 16,
+        size = 20,
         face = "bold",
         hjust = 0),
       plot.subtitle = ggplot2::element_text(

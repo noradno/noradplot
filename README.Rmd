@@ -28,10 +28,15 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 
 library(ggplot2)
 library(noradplot)
+
+ggnorad()
+
 ggplot(mpg, aes(displ, hwy, color = class)) + 
   geom_point() +
-  theme_norad() +
-  scale_color_norad()
+  scale_color_norad() +
+  labs(title = "This is the title",
+       subtitle = "This is the slightly longer subtitle",
+       caption = "This is the caption")
 ```
 
 ## Credits
