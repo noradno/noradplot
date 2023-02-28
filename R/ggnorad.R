@@ -1,5 +1,6 @@
 #' Wrapper function to load norad theme
 #'
+#'@param ... Additional arguments
 #'@export
 #'@name ggnorad
 
