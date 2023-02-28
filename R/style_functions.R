@@ -25,13 +25,13 @@ theme_norad <- function() {
       plot.subtitle = ggplot2::element_text(
         size = 14,
         hjust = 0,
-        margin = margin(t = 5, b = 5)),
+        margin = ggplot2::margin(t = 5, b = 5)),
       # Plot caption
       plot.caption.position = "plot",
       plot.caption = ggplot2::element_text(
         size = 12,
         hjust = 0,
-        margin = margin(t = 10)),
+        margin = ggplot2::margin(t = 10)),
       # Legend
       legend.text = ggplot2::element_text(
         size = 12),
@@ -39,7 +39,7 @@ theme_norad <- function() {
         size = 12),
       legend.position = "right",
       legend.justification = "top",
-      legend.margin = margin(r = 30),
+      legend.margin = ggplot2::margin(r = 30),
       legend.text.align = 0,
       legend.background = ggplot2::element_blank(),
       # Axes
@@ -50,10 +50,10 @@ theme_norad <- function() {
       axis.title = ggplot2::element_text(
         size = 12
       ),
-      axis.title.y = ggplot2::element_text(margin = margin(r = 5)),
-      axis.title.x = ggplot2::element_text(margin = margin(t = 10)),
-      axis.text.y = ggplot2::element_text(margin = margin(r = 5)),
-      axis.text.x = ggplot2::element_text(margin = margin(t = 10))
+      axis.title.y = ggplot2::element_text(margin = ggplot2::margin(r = 5)),
+      axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 10)),
+      axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 5)),
+      axis.text.x = ggplot2::element_text(margin = ggplot2::margin(t = 10))
     )
 }
 
