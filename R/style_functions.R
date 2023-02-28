@@ -5,8 +5,8 @@
 #'@name theme_norad
 
 theme_norad <- function() {
-  sans <- "Arimo"
-  serif <- "EB Garamond"
+  sans <- "Norad Sans"
+  serif <- "Norad Serif"
 
   ggplot2::theme_classic() +
     ggplot2::theme(

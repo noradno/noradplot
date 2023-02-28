@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 Norads colour palette and plot style for creating ggplot2 graphics.
 
--   Use `theme_norad()` to add norad style
+-   Use `ggnorad()` to add Norad plot style
 
 -   Use `scale_*` functions to add norad colour palette
 
