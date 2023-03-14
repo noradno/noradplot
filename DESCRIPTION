@@ -1,7 +1,7 @@
 Package: noradplot
 Type: Package
 Title: Norad colour palette and theme for ggplot2 graphics
-Version: 0.1.0
+Version: 0.2.0
 Author: Norad
 Maintainer: Einar Tornes <einar.tornes@norad.no>
 Description: Provides Norads colour palette and theme for creating ggplot2 graphics. Credits: Based on Simon Jackson's blog post: Creating corporate colour palettes for ggplot2, BBC BBC Visual and Data Journalism cookbook for R graphics: https://bbc.github.io/rcookbook/ and Meghan Halls blog post Creating Custom colour palettes for ggplot2: https://meghan.rbind.io/blog/2022-10-11-creating-custom-color-palettes-with-ggplot2/.
