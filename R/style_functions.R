@@ -29,6 +29,7 @@ theme_norad <- function() {
       # Plot caption
       plot.caption.position = "plot",
       plot.caption = ggplot2::element_text(
+        family = serif,
         size = 12,
         hjust = 0,
         margin = ggplot2::margin(t = 10)),
