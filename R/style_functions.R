@@ -25,7 +25,7 @@ theme_norad <- function() {
       plot.subtitle = ggplot2::element_text(
         size = 14,
         hjust = 0,
-        margin = ggplot2::margin(t = 5, b = 5)),
+        margin = ggplot2::margin(t = 5, b = 15)),
       # Plot caption
       plot.caption.position = "plot",
       plot.caption = ggplot2::element_text(
