@@ -4,6 +4,28 @@
 #' @param ... Character names of norad_colors
 #'
 
+norad_gradient <- function(n) {
+  stopifnot("n must be greater than zero" = n > 0)
+  color_high <- "#1B3A1C"
+  color_high_hsl <- plotwidgets::col2hsl(color_high)
+  color_low_hsl <- color_high_hsl
+  color_low_hsl[3] <- 1 - (1 - color_high_hsl[3])*0.1 # 90 % lighter
+  color_low <- plotwidgets::hsl2col(color_low_hsl)
+
+  if (n > 2) {
+    colorramp <- vector("character", length = n)
+    lightness_steps <- (color_low_hsl[3] - color_high_hsl[3]) / (n - 1)
+    for(i in 1:n) {
+      color_hsl <- color_high_hsl
+      color_hsl[3] <- color_high_hsl[3] + lightness_steps*(i - 1)
+      colorramp[i] <- plotwidgets::hsl2col(color_hsl)
+    }
+  } else {
+    colorramp <- c(color_low, color_high)
+  }
+  return(colorramp)
+}
+
 norad_cols <- function(...) {
 
   norad_colors <- c(
