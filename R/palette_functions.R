@@ -1,8 +1,8 @@
+#' Gradient color constructor for Norad colors
+#'
+#' @param n Number of colors
+#' @export
 
-#' Function to extract Norad colors as hex codes
-#'
-#' @param ... Character names of norad_colors
-#'
 
 norad_gradient <- function(n) {
   stopifnot("n must be greater than zero" = n > 0)
@@ -25,6 +25,11 @@ norad_gradient <- function(n) {
   }
   return(colorramp)
 }
+
+#' Function to extract Norad colors as hex codes
+#'
+#' @param ... Character names of norad_colors
+#'
 
 norad_cols <- function(...) {
 
