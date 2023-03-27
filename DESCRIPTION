@@ -17,5 +17,6 @@ Imports:
     ggplot2,
     grDevices,
     jsonlite,
+    plotwidgets,
     showtext,
     sysfonts
