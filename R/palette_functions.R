@@ -1,4 +1,4 @@
-#' Gradient color constructor for Norad colors
+#' Gradient color scale constructor for Norad colors
 #'
 #' @param n Number of colors
 #' @export
@@ -29,11 +29,12 @@ norad_gradient <- function(n) {
 #' Function to extract Norad colors as hex codes
 #'
 #' @param ... Character names of norad_colors
-#'
+#' @export
 
 norad_cols <- function(...) {
 
   norad_colors <- c(
+    "darkgreen" = "#1b3a1c",
     "green" = "#03542d",
     "lightgreen" = "#b4eac9",
     "darkarmy" = "#656d3a",
@@ -49,7 +50,7 @@ norad_cols <- function(...) {
     "lightpink" = "#ffd2e7",
     "red" = "#ff570d",
     "lightarmy" = "#c9c7a6"
-      )
+  )
 
   cols <- c(...)
 
