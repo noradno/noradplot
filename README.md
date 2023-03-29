@@ -16,7 +16,6 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 ### Default theme, suitable for reports
 
 ``` r
-
 library(ggplot2)
 library(noradplot)
 
@@ -35,7 +34,6 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
 ### Colorful theme, suitable for presentations
 
 ``` r
-
 ggnorad(style = "biglight1")
 
 gdppc <- data.frame(gdppc = c(18195, 7312, 2036),
@@ -48,13 +46,13 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
             size = 36, family = "Norad Display", color = norad_cols("darkgreen")) +
   labs(title = "GDP per Capita – 2021", x = NULL, y = NULL,
        subtitle = "US Dollar*") +
-  coord_cartesian(clip = "off")
+  coord_cartesian(clip = "off") +
+  theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
 ```
 
 ![](man/figures/README-example2-1.png)<!-- -->
 
 ``` r
-
 ggnorad(style = "biglight2")
 
 ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) + 
@@ -64,13 +62,13 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
             size = 36, family = "Norad Display", color = norad_cols("brown")) +
   labs(title = "GDP per Capita – 2021", x = NULL, y = NULL,
        subtitle = "US Dollar*") +
-  coord_cartesian(clip = "off")
+  coord_cartesian(clip = "off") +
+  theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
 ```
 
 ![](man/figures/README-example3-1.png)<!-- -->
 
 ``` r
-
 ggnorad(style = "bigdark")
 #> Warning in ggnorad(style = "bigdark"): This style is high contrast. Use
 #> additional visual elements with care.
@@ -80,7 +78,8 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
   scale_y_continuous(expand = expansion(c(0, 0.1)), labels = scales::label_comma(big.mark = " ")) +
   labs(title = "GDP per Capita – 2021", x = NULL, y = NULL,
        subtitle = "US Dollar*") +
-  coord_cartesian(clip = "off")
+  coord_cartesian(clip = "off") +
+  theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
 ```
 
 ![](man/figures/README-example4-1.png)<!-- -->
