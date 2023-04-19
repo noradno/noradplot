@@ -34,7 +34,6 @@ norad_gradient <- function(n) {
 norad_cols <- function(...) {
 
   norad_colors <- c(
-    "darkgreen" = "#1b3a1c",
     "green" = "#03542d",
     "lightgreen" = "#b4eac9",
     "darkarmy" = "#656d3a",
