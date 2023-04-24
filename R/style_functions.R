@@ -76,22 +76,8 @@ theme_norad_big_light_1 <- function() {
       ),
       # Plot title and subtitle
       plot.title.position = "plot",
-      plot.title = ggplot2::element_text(
-        family = display,
-        face = "bold",
-        size = 60,
-        hjust = 0.5,
-        margin = ggplot2::margin(t = 20, b = 20),
-        color = norad_cols("green")
-      ),
-      plot.subtitle = ggplot2::element_text(
-        family = serif,
-        face = "italic",
-        size = 30,
-        hjust = 0.5,
-        margin = ggplot2::margin(t = 0, b = 70),
-        color = norad_cols("green")
-      ),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
       # Plot caption
       plot.caption.position = "plot",
       plot.caption = ggplot2::element_text(
@@ -112,18 +98,20 @@ theme_norad_big_light_1 <- function() {
       # Axes
       axis.text = ggplot2::element_text(
         size = 20,
-        color = "#1b3a1c"
+        color = norad_cols("green")
       ),
       axis.title = ggplot2::element_blank(),
       axis.title.y = ggplot2::element_text(margin = ggplot2::margin(r = 5)),
       axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 10)),
       axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 15)),
       axis.text.x = ggplot2::element_text(margin = ggplot2::margin(t = 20)),
-      axis.line = ggplot2::element_line(color = "#1b3a1c"),
+      axis.line = ggplot2::element_line(color = norad_cols("green")),
       axis.ticks = ggplot2::element_blank(),
       # Plot and panel background
-      plot.background = ggplot2::element_rect(fill = "#dfefd4"),
-      panel.background = ggplot2::element_blank()
+      plot.background = ggplot2::element_rect(fill = "#eff6ea"),
+      panel.background = ggplot2::element_blank(),
+      # Plot margin
+      plot.margin = margin(2, 2, 2, 2, "cm")
     )
 }
 
@@ -140,8 +128,8 @@ theme_norad_big_dark <- function() {
     ggplot2::theme(
       plot.background = ggplot2::element_rect(fill = "#1b3a1c"),
       panel.background = ggplot2::element_blank(),
-      plot.title = ggplot2::element_text(color = norad_cols("lightgreen")),
-      plot.subtitle = ggplot2::element_text(color = norad_cols("orange")),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
       axis.text = ggplot2::element_text(
         size = 20,
         color = norad_cols("lightgreen")
@@ -161,15 +149,15 @@ theme_norad_big_light_2 <- function() {
 
   theme_norad_big_light_1() +
     ggplot2::theme(
-      plot.background = ggplot2::element_rect(fill = "#f7e0cf"),
+      plot.background = ggplot2::element_rect(fill = "#eee8e7"),
       panel.background = ggplot2::element_blank(),
-      plot.title = ggplot2::element_text(color = norad_cols("darkgreen")),
-      plot.subtitle = ggplot2::element_text(color = norad_cols("darkgreen")),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
       axis.text = ggplot2::element_text(
         size = 20,
-        color = norad_cols("darkgreen")
+        color = norad_cols("blue")
       ),
-      axis.line = ggplot2::element_line(color = norad_cols("darkgreen"))
+      axis.line = ggplot2::element_line(color = norad_cols("blue"))
     )
 }
 
