@@ -7,7 +7,7 @@
 ggnorad(style = "default")
 }
 \arguments{
-\item{...}{Additional arguments}
+\item{style}{Plot style. One of "default", "biglight1", "biglight2", "bigdark".}
 }
 \description{
 Wrapper function to load norad theme

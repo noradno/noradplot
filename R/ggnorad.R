@@ -1,6 +1,6 @@
 #' Wrapper function to load norad theme
 #'
-#'@param ... Additional arguments
+#'@param style Plot style. One of "default", "biglight1", "biglight2", "bigdark".
 #'@export
 #'@name ggnorad
 

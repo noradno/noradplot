@@ -11,7 +11,7 @@ palette_gen_c(palette = "main", direction = 1, ...)
 
 \item{direction}{Integer indicating whether the palette should be reversed}
 
-\item{...}{Additional arguments passed to colorRampPalette()}
+\item{...}{Additional arguments passed to ggplot2::colorRampPalette()}
 }
 \description{
 Helper function for continuous color scales
