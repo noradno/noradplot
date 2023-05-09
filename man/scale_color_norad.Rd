@@ -11,7 +11,7 @@ scale_color_norad(palette = "main", direction = 1, ...)
 
 \item{direction}{Integer indicating whether the palette should be reversed}
 
-\item{...}{Additional arguments passed to discrete_scale()}
+\item{...}{Additional arguments passed to ggplot2::discrete_scale()}
 }
 \description{
 Discrete color scale constructor for Norad colors

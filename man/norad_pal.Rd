@@ -9,7 +9,7 @@ norad_pal(palette = "main", ...)
 \arguments{
 \item{palette}{Character name of palette in norad_palettes}
 
-\item{...}{Additional arguments}
+\item{...}{Additional arguments (not in use)}
 }
 \description{
 Function to access Norad palettes

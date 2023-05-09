@@ -4,14 +4,14 @@
 \alias{scale_color_norad_c}
 \title{Continious color scale constructor for Norad colors}
 \usage{
-scale_color_norad_c(palette = "greenyellow", direction = 1, ...)
+scale_color_norad_c(palette = "greens", direction = 1, ...)
 }
 \arguments{
 \item{palette}{Character name of palette in norad_palettes}
 
 \item{direction}{Integer indicating whether the palette should be reversed}
 
-\item{...}{Additional arguments passed to discrete_scale()}
+\item{...}{Additional arguments passed to ggplot2::scale_fill_gradientn()}
 }
 \description{
 Continious color scale constructor for Norad colors
