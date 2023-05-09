@@ -24,8 +24,8 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 
 ## Examples
 
-```{r example}
-
+### Default theme, suitable for reports
+```{r example1}
 library(ggplot2)
 library(noradplot)
 
@@ -37,6 +37,54 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
   labs(title = "This is the title",
        subtitle = "This is the slightly longer subtitle",
        caption = "This is the caption")
+```
+
+### Colorful theme, suitable for presentations
+```{r example2, fig.width=16, fig.height=8}
+ggnorad(style = "biglight1")
+
+gdppc <- data.frame(gdppc = c(18195, 7312, 2036),
+                    incomegroup = c("Higher middle-income", "Lower middle-income", "Low-income"))
+
+ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) + 
+  geom_col(width = 0.9, fill = norad_cols("lightgreen")) +
+  scale_y_continuous(expand = expansion(c(0, 0.1)), labels = scales::label_comma(big.mark = " ")) +
+  geom_text(aes(x = incomegroup, y = 0, vjust = 0, label = paste0(format(round(gdppc, 1), big.mark = " "))),
+            size = 36, family = "Norad Display", color = norad_cols("green")) +
+  labs(title = "GDP per Capita – 2021", x = NULL, y = NULL,
+       subtitle = "US Dollar*") +
+  coord_cartesian(clip = "off") +
+  theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
+
+```
+
+```{r example3, fig.width=16, fig.height=8}
+ggnorad(style = "biglight2")
+
+ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) + 
+  geom_col(width = 0.9, fill = norad_cols("orange")) +
+  scale_y_continuous(expand = expansion(c(0, 0.1)), labels = scales::label_comma(big.mark = " ")) +
+  geom_text(aes(x = incomegroup, y = 0, vjust = 0, label = paste0(format(round(gdppc, 1), big.mark = " "))),
+            size = 36, family = "Norad Display", color = norad_cols("blue")) +
+  labs(title = "GDP per Capita – 2021", x = NULL, y = NULL,
+       subtitle = "US Dollar*") +
+  coord_cartesian(clip = "off") +
+  theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
+
+
+```
+
+```{r example4, fig.width=16, fig.height=8}
+ggnorad(style = "bigdark")
+
+ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) + 
+  geom_col(width = 0.9, fill = norad_cols("lightgreen")) +
+  scale_y_continuous(expand = expansion(c(0, 0.1)), labels = scales::label_comma(big.mark = " ")) +
+  labs(title = "GDP per Capita – 2021", x = NULL, y = NULL,
+       subtitle = "US Dollar*") +
+  coord_cartesian(clip = "off") +
+  theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
+
 ```
 
 ## Credits

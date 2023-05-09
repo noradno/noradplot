@@ -2,7 +2,7 @@
 #' Function for using Norad's theme in ggplot2 graphics
 #'
 #'@export
-#'@name theme_norad
+
 
 theme_norad <- function() {
   sans <- "Norad Sans"
@@ -55,6 +55,110 @@ theme_norad <- function() {
       axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 10)),
       axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 5)),
       axis.text.x = ggplot2::element_text(margin = ggplot2::margin(t = 10))
+    )
+}
+
+#' Function for using Norad's theme in ggplot2 graphics
+#'
+#'@export
+
+theme_norad_big_light_1 <- function() {
+  sans <- "Norad Sans"
+  serif <- "Norad Serif"
+  display <- "Norad Display"
+
+  ggplot2::theme_classic() +
+    ggplot2::theme(
+      # General text
+      text = ggplot2::element_text(
+        family = sans, # default unless otherwise stated (like in plot.title)
+        size = 12,
+        color = norad_cols("green")
+      ),
+      # Plot title and subtitle
+      plot.title.position = "plot",
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      # Plot caption
+      plot.caption.position = "plot",
+      plot.caption = ggplot2::element_text(
+        family = serif,
+        size = 20,
+        hjust = 0,
+        margin = ggplot2::margin(t = 10)),
+      # Legend
+      legend.text = ggplot2::element_text(
+        size = 12),
+      legend.title = ggplot2::element_text(
+        size = 12),
+      legend.position = "right",
+      legend.justification = "top",
+      legend.margin = ggplot2::margin(r = 30),
+      legend.text.align = 0,
+      legend.background = ggplot2::element_blank(),
+      # Axes
+      axis.text = ggplot2::element_text(size = 20, color = norad_cols("green")),
+      axis.title = ggplot2::element_text(size = 20),
+      axis.title.y = ggplot2::element_text(margin = ggplot2::margin(r = 5)),
+      axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 10)),
+      axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 15)),
+      axis.text.x = ggplot2::element_text(margin = ggplot2::margin(t = 20)),
+      axis.line = ggplot2::element_line(color = norad_cols("green")),
+      axis.ticks = ggplot2::element_blank(),
+      # Facet labels
+      strip.text = element_text(size = 20, color = norad_cols("lightgreen")),
+      strip.background = element_rect(fill = norad_cols("green"), color = NA),
+      # Plot and panel background
+      plot.background = ggplot2::element_rect(fill = "#eff6ea", color = NA),
+      panel.background = ggplot2::element_blank(),
+      # Plot margin
+      plot.margin = margin(1, 0, 1, 1, "cm")
+    )
+}
+
+#' Function for using Norad's theme in ggplot2 graphics
+#'
+#'@export
+
+theme_norad_big_dark <- function() {
+  sans <- "Norad Sans"
+  serif <- "Norad Serif"
+  display <- "Norad Display"
+
+  theme_norad_big_light_1() +
+    ggplot2::theme(
+      text = element_text(color = norad_cols("lightgreen")),
+      plot.background = ggplot2::element_rect(fill = "#1b3a1c"),
+      panel.background = ggplot2::element_blank(),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      axis.text = ggplot2::element_text(size = 20, color = norad_cols("lightgreen")),
+      axis.line = ggplot2::element_line(color = norad_cols("lightgreen")),
+      strip.text = element_text(size = 20, color = norad_cols("green")),
+      strip.background = element_rect(fill = norad_cols("lightgreen"), color = NA)
+    )
+}
+
+#' Function for using Norad's theme in ggplot2 graphics
+#'
+#'@export
+
+theme_norad_big_light_2 <- function() {
+  sans <- "Norad Sans"
+  serif <- "Norad Serif"
+  display <- "Norad Display"
+
+  theme_norad_big_light_1() +
+    ggplot2::theme(
+      text = element_text(color = norad_cols("blue")),
+      plot.background = ggplot2::element_rect(fill = "#eee8e7"),
+      panel.background = ggplot2::element_blank(),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      axis.text = ggplot2::element_text(size = 20, color = norad_cols("blue")),
+      axis.line = ggplot2::element_line(color = norad_cols("blue")),
+      strip.text = element_text(size = 20, color = norad_cols("blue")),
+      strip.background = element_rect(fill = norad_cols("darkred"), color = NA)
     )
 }
 

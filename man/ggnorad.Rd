@@ -4,7 +4,7 @@
 \alias{ggnorad}
 \title{Wrapper function to load norad theme}
 \usage{
-ggnorad(...)
+ggnorad(style = "default")
 }
 \arguments{
 \item{...}{Additional arguments}
