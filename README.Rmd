@@ -8,7 +8,8 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-"
+  fig.path = "man/figures/README-",
+  dev = "svglite"
 )
 ```
 
@@ -84,6 +85,39 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
        subtitle = "US Dollar*") +
   coord_cartesian(clip = "off") +
   theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
+
+```
+
+```{r example5, fig.width=16, fig.height=8}
+library(sf)
+library(rnaturalearth)
+
+ggnorad(style = "maplight")
+world <- ne_countries(returnclass = "sf")
+world <- world[world$admin != "Antarctica", ]
+world$gdppcap <- 10^6 * world$gdp_md_est / world$pop_est
+
+ggplot(world) + 
+  geom_sf(aes(fill = gdppcap)) +
+  scale_fill_norad_binned() +
+  guides(fill = guide_colorsteps(title = "GDP per capita", show.limits = TRUE)) +
+  theme(legend.position = c(0.15, 0.3),
+        legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
+
+```
+
+```{r example6, fig.width=16, fig.height=8}
+library(sf)
+library(rnaturalearth)
+
+ggnorad(style = "mapdark")
+
+ggplot(world) + 
+  geom_sf(aes(fill = gdppcap)) + 
+  scale_fill_norad_binned("browns") +
+  guides(fill = guide_colorsteps(title = "GDP per capita", show.limits = TRUE)) +
+  theme(legend.position = c(0.15, 0.3),
+                legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
 
 ```
 

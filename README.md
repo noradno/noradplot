@@ -29,7 +29,7 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
        caption = "This is the caption")
 ```
 
-![](man/figures/README-example1-1.png)<!-- -->
+![](man/figures/README-example1-1.svg)<!-- -->
 
 ### Colorful theme, suitable for presentations
 
@@ -50,7 +50,7 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
   theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
 ```
 
-![](man/figures/README-example2-1.png)<!-- -->
+![](man/figures/README-example2-1.svg)<!-- -->
 
 ``` r
 ggnorad(style = "biglight2")
@@ -66,7 +66,7 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
   theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
 ```
 
-![](man/figures/README-example3-1.png)<!-- -->
+![](man/figures/README-example3-1.svg)<!-- -->
 
 ``` r
 ggnorad(style = "bigdark")
@@ -82,7 +82,43 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
   theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
 ```
 
-![](man/figures/README-example4-1.png)<!-- -->
+![](man/figures/README-example4-1.svg)<!-- -->
+
+``` r
+library(sf)
+#> Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE
+library(rnaturalearth)
+
+ggnorad(style = "maplight")
+world <- ne_countries(returnclass = "sf")
+world <- world[world$admin != "Antarctica", ]
+world$gdppcap <- 10^6 * world$gdp_md_est / world$pop_est
+
+ggplot(world) + 
+  geom_sf(aes(fill = gdppcap)) +
+  scale_fill_norad_binned() +
+  guides(fill = guide_colorsteps(title = "GDP per capita", show.limits = TRUE)) +
+  theme(legend.position = c(0.15, 0.3),
+        legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
+```
+
+![](man/figures/README-example5-1.svg)<!-- -->
+
+``` r
+library(sf)
+library(rnaturalearth)
+
+ggnorad(style = "mapdark")
+
+ggplot(world) + 
+  geom_sf(aes(fill = gdppcap)) + 
+  scale_fill_norad_binned("browns") +
+  guides(fill = guide_colorsteps(title = "GDP per capita", show.limits = TRUE)) +
+  theme(legend.position = c(0.15, 0.3),
+                legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
+```
+
+![](man/figures/README-example6-1.svg)<!-- -->
 
 ## Credits
 

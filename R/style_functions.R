@@ -162,6 +162,48 @@ theme_norad_big_light_2 <- function() {
     )
 }
 
+#' Function for using Norad's theme in ggplot2 graphics
+#'
+#'@export
+
+theme_norad_map_light <- function() {
+  sans <- "Norad Sans"
+  serif <- "Norad Serif"
+  display <- "Norad Display"
+
+  ggplot2::theme_void() +
+    ggplot2::theme(
+      plot.background = ggplot2::element_rect(fill = "#eff6ea", color = NA),
+      legend.margin = ggplot2::margin(1, 1, 1, 1, "cm"),
+      text = ggplot2::element_text(
+        color = norad_cols("green"),
+        family = sans,
+        size = 12),
+      panel.border = element_blank()
+    )
+}
+
+#' Function for using Norad's theme in ggplot2 graphics
+#'
+#'@export
+
+theme_norad_map_dark <- function() {
+  sans <- "Norad Sans"
+  serif <- "Norad Serif"
+  display <- "Norad Display"
+
+  ggplot2::theme_void() +
+    ggplot2::theme(
+      plot.background = ggplot2::element_rect(fill = "#1b3a1c", color = NA),
+      legend.margin = ggplot2::margin(1, 1, 1, 1, "cm"),
+      text = ggplot2::element_text(
+        color = norad_cols("lightgreen"),
+        family = sans,
+        size = 12),
+      panel.border = element_blank()
+    )
+}
+
 #' @examples
 #' ggplot(mtcars, aes(factor(cyl), mpg)) +
 #' geom_bar(aes(fill = factor(cyl)), stat = "identity") +

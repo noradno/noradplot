@@ -8,6 +8,7 @@ ggnorad <- function(style = "default") {
 
   showtext::showtext_auto()
 
+  options(scipen = 999)
   fonts_dir <- system.file("fonts", package = "noradplot")
   sysfonts::font_add(family = "Norad Sans",
                      regular = paste0(fonts_dir, "/NoradSans-Regular.otf"),
@@ -37,5 +38,9 @@ ggnorad <- function(style = "default") {
   } else if (style == "bigdark") {
     warning("This style is high contrast. Use additional visual elements with care.")
     ggplot2::theme_set(theme_norad_big_dark())
+  } else if (style == "maplight") {
+    ggplot2::theme_set(theme_norad_map_light())
+  } else if (style == "mapdark") {
+    ggplot2::theme_set(theme_norad_map_dark())
   }
 }
