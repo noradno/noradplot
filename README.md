@@ -91,13 +91,14 @@ library(rnaturalearth)
 
 ggnorad(style = "maplight")
 world <- ne_countries(returnclass = "sf")
+world <- st_transform(world, "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +R=6371000 +units=m +no_defs +type=crs")
 world <- world[world$admin != "Antarctica", ]
-world$gdppcap <- 10^6 * world$gdp_md_est / world$pop_est
+world$rand <- runif(nrow(world), 1, 1000)
 
 ggplot(world) + 
-  geom_sf(aes(fill = gdppcap)) +
+  geom_sf(aes(fill = rand)) +
   scale_fill_norad_binned() +
-  guides(fill = guide_colorsteps(title = "GDP per capita", show.limits = TRUE)) +
+  guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
   theme(legend.position = c(0.15, 0.3),
         legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
 ```
@@ -111,14 +112,14 @@ library(rnaturalearth)
 ggnorad(style = "mapdark")
 
 ggplot(world) + 
-  geom_sf(aes(fill = gdppcap)) + 
+  geom_sf(aes(fill = rand)) + 
   scale_fill_norad_binned("browns") +
-  guides(fill = guide_colorsteps(title = "GDP per capita", show.limits = TRUE)) +
+  guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
   theme(legend.position = c(0.15, 0.3),
-                legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
+        legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
 ```
 
-![](man/figures/README-example6-1.svg)<!-- -->
+![](man/figures/README-example6%7D-1.svg)<!-- -->
 
 ## Credits
 
