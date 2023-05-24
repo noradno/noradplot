@@ -3,7 +3,6 @@
 #'
 #'@export
 
-
 theme_norad <- function() {
   sans <- "Norad Sans"
   serif <- "Norad Serif"
@@ -55,6 +54,26 @@ theme_norad <- function() {
       axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 10)),
       axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 5)),
       axis.text.x = ggplot2::element_text(margin = ggplot2::margin(t = 10))
+    )
+}
+
+#' Function for using Norad's theme in ggplot2 graphics
+#'
+#'@export
+
+theme_norad_light_green <- function() {
+  sans <- "Norad Sans"
+  serif <- "Norad Serif"
+
+  theme_norad() +
+    ggplot2::theme(
+      # Plot and panel background
+      panel.background = element_rect(fill = "transparent"), #transparent panel bg
+      plot.background = element_rect(fill = "transparent", color = NA), #transparent plot bg
+      panel.grid.major = element_blank(), #remove major gridlines
+      panel.grid.minor = element_blank(), #remove minor gridlines
+      legend.background = element_rect(fill = "transparent", color = NA), #transparent legend bg
+      legend.box.background = element_rect(fill = "transparent", color = NA) #transparent legend panel
     )
 }
 

@@ -19,7 +19,7 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 library(ggplot2)
 library(noradplot)
 
-ggnorad()
+ggnorad("light")
 
 ggplot(mpg, aes(displ, hwy, color = class)) + 
   geom_point() +

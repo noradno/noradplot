@@ -31,7 +31,9 @@ ggnorad <- function(style = "default") {
 
   if (style == "default") {
     ggplot2::theme_set(theme_norad())
-  } else if (style == "biglight1") {
+  } else if (style == "light") {
+    ggplot2::theme_set(theme_norad_light_green())
+  }  else if (style == "biglight1") {
     ggplot2::theme_set(theme_norad_big_light_1())
   } else if (style == "biglight2") {
     ggplot2::theme_set(theme_norad_big_light_2())
