@@ -193,6 +193,7 @@ theme_norad_map_light <- function() {
   ggplot2::theme_void() +
     ggplot2::theme(
       plot.background = ggplot2::element_rect(fill = "#eff6ea", color = NA),
+      plot.margin = ggplot2::margin(3, 3, 3, 3, "mm"),
       legend.margin = ggplot2::margin(1, 1, 1, 1, "cm"),
       text = ggplot2::element_text(
         color = norad_cols("green"),
@@ -214,6 +215,7 @@ theme_norad_map_dark <- function() {
   ggplot2::theme_void() +
     ggplot2::theme(
       plot.background = ggplot2::element_rect(fill = "#1b3a1c", color = NA),
+      plot.margin = ggplot2::margin(3, 3, 3, 3, "mm"),
       legend.margin = ggplot2::margin(1, 1, 1, 1, "cm"),
       text = ggplot2::element_text(
         color = norad_cols("lightgreen"),
