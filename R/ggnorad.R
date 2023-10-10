@@ -27,6 +27,12 @@ ggnorad <- function(style = "default") {
                      bold = paste0(fonts_dir, "/NoradDisplay-Bold.otf"),
                      italic = paste0(fonts_dir, "/NoradDisplay-BoldItalic.otf"))
 
+  sysfonts::font_add(family = "Arial", 
+                     regular = paste0(fonts_dir, "/arial.ttf"), 
+                     bold = paste0(fonts_dir, "arialbd.ttf"), 
+                     italic = paste0(fonts_dir, "ariali.ttf"),
+                     bolditalic = paste0(fonts_dir, "arialbi.ttf"))
+  
   ggplot2::update_geom_defaults("path", list(linewidth = 1))
 
   if (style == "default") {
