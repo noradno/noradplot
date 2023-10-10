@@ -111,19 +111,17 @@ theme_norad_big_light_1 <- function() {
       plot.title.position = "plot",
       plot.title = ggplot2::element_text(
         family = sans,
-        size = 16,
-        face = "bold"
+        size = 16
       ),
       plot.subtitle = ggplot2::element_text(
         family = sans,
-        size = 14,
+        size = 12,
         margin = ggplot2::margin(t = 5, b = 15)
       ),
       # Plot caption
       plot.caption.position = "plot",
       plot.caption = ggplot2::element_text(
         family = serif,
-        size = 20,
         hjust = 0,
         margin = ggplot2::margin(t = 10)),
       # Legend
@@ -137,8 +135,14 @@ theme_norad_big_light_1 <- function() {
       legend.text.align = 0,
       legend.background = ggplot2::element_blank(),
       # Axes
-      axis.text = ggplot2::element_text(size = 16, color = norad_cols("green")),
-      axis.title = ggplot2::element_text(size = 16),
+      axis.text = ggplot2::element_text(
+        size = 12, 
+        color = norad_cols("green")
+      ),
+      axis.title = ggplot2::element_text(
+        family = sans,
+        size = 14
+      ),
       axis.title.y = ggplot2::element_text(margin = ggplot2::margin(r = 5)),
       axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 10)),
       axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 15)),
@@ -146,10 +150,20 @@ theme_norad_big_light_1 <- function() {
       axis.line = ggplot2::element_line(color = norad_cols("green")),
       axis.ticks = ggplot2::element_blank(),
       # Facet labels
-      strip.text = ggplot2::element_text(size = 16, color = norad_cols("lightgreen")),
-      strip.background = ggplot2::element_rect(fill = norad_cols("green"), color = NA),
+      strip.text = ggplot2::element_text(
+        family = sans,
+        size = 14, 
+        color = norad_cols("lightgreen")
+      ),
+      strip.background = ggplot2::element_rect(
+        fill = norad_cols("green"), 
+        color = NA
+      ),
       # Plot and panel background
-      plot.background = ggplot2::element_rect(fill = "#eff6ea", color = NA),
+      plot.background = ggplot2::element_rect(
+        fill = "#eff6ea", 
+        color = NA
+      ),
       panel.background = ggplot2::element_blank(),
       # Plot margin
       plot.margin = ggplot2::margin(1, 0, 1, 1, "cm")
@@ -170,10 +184,20 @@ theme_norad_big_dark <- function() {
       text = ggplot2::element_text(color = norad_cols("lightgreen")),
       plot.background = ggplot2::element_rect(fill = "#1b3a1c"),
       panel.background = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(size = 16, color = norad_cols("lightgreen")),
+      axis.text = ggplot2::element_text(
+        size = 12, 
+        color = norad_cols("lightgreen")
+      ),
       axis.line = ggplot2::element_line(color = norad_cols("lightgreen")),
-      strip.text = ggplot2::element_text(size = 16, color = norad_cols("green")),
-      strip.background = ggplot2::element_rect(fill = norad_cols("lightgreen"), color = NA)
+      strip.text = ggplot2::element_text(
+        family = sans,
+        size = 14, 
+        color = norad_cols("green")
+      ),
+      strip.background = ggplot2::element_rect(
+        fill = norad_cols("lightgreen"), 
+        color = NA
+      )
     )
 }
 
@@ -191,10 +215,19 @@ theme_norad_big_light_2 <- function() {
       text = ggplot2::element_text(color = norad_cols("blue")),
       plot.background = ggplot2::element_rect(fill = "#eee8e7"),
       panel.background = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(size = 16, color = norad_cols("blue")),
+      axis.text = ggplot2::element_text(
+        size = 12, 
+        color = norad_cols("blue")
+      ),
       axis.line = ggplot2::element_line(color = norad_cols("blue")),
-      strip.text = ggplot2::element_text(size = 16, color = norad_cols("blue")),
-      strip.background = ggplot2::element_rect(fill = norad_cols("darkred"), color = NA)
+      strip.text = ggplot2::element_text(
+        size = 14, 
+        color = norad_cols("blue")
+      ),
+      strip.background = ggplot2::element_rect(
+        fill = norad_cols("darkred"), 
+        color = NA
+      )
     )
 }
 
