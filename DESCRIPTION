@@ -1,7 +1,7 @@
 Package: noradplot
 Type: Package
 Title: Norad colour palette and theme for ggplot2 graphics
-Version: 0.4.0
+Version: 0.5.0
 Authors@R: c(
     person("Einar", "Tornes", email = "einar.tornes@norad.no", role = c("aut", "cre")),
     person("Eivind", "Hammersmark", "Moe", email = "eivind.moe.hammersmark@norad.no", role = "aut"),

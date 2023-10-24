@@ -8,7 +8,9 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-"
+  fig.path = "man/figures/README-",
+  dev = "svglite",
+  dev.args=list(bg="transparent")
 )
 ```
 
@@ -26,10 +28,13 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 
 ### Default theme, suitable for reports
 ```{r example1}
+#| fig.width: 10
+#| fig.height: 6
+
 library(ggplot2)
 library(noradplot)
 
-ggnorad()
+ggnorad("light")
 
 ggplot(mpg, aes(displ, hwy, color = class)) + 
   geom_point() +
@@ -40,7 +45,10 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
 ```
 
 ### Colorful theme, suitable for presentations
-```{r example2, fig.width=16, fig.height=8}
+```{r example2}
+#| fig.width: 16
+#| fig.height: 8
+
 ggnorad(style = "biglight1")
 
 gdppc <- data.frame(gdppc = c(18195, 7312, 2036),
@@ -58,7 +66,10 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
 
 ```
 
-```{r example3, fig.width=16, fig.height=8}
+```{r example3}
+#| fig.width: 16
+#| fig.height: 8
+
 ggnorad(style = "biglight2")
 
 ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) + 
@@ -74,7 +85,10 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
 
 ```
 
-```{r example4, fig.width=16, fig.height=8}
+```{r example4}
+#| fig.width: 16
+#| fig.height: 8
+
 ggnorad(style = "bigdark")
 
 ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) + 
@@ -84,6 +98,46 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
        subtitle = "US Dollar*") +
   coord_cartesian(clip = "off") +
   theme(axis.line.x = element_blank(), axis.text.x = element_text(face = "bold"))
+
+```
+
+```{r example5}
+#| fig.width: 16
+#| fig.height: 7
+
+library(sf)
+library(rnaturalearth)
+
+ggnorad(style = "maplight")
+world <- ne_countries(returnclass = "sf")
+world <- st_transform(world, "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +R=6371000 +units=m +no_defs +type=crs")
+world <- world[world$admin != "Antarctica", ]
+world$rand <- runif(nrow(world), 1, 1000)
+
+ggplot(world) + 
+  geom_sf(aes(fill = rand)) +
+  scale_fill_norad_binned() +
+  guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
+  theme(legend.position = c(0.15, 0.3),
+        legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
+
+```
+
+```{r example6}}
+#| fig.width: 16
+#| fig.height: 7
+
+library(sf)
+library(rnaturalearth)
+
+ggnorad(style = "mapdark")
+
+ggplot(world) + 
+  geom_sf(aes(fill = rand)) + 
+  scale_fill_norad_binned("browns") +
+  guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
+  theme(legend.position = c(0.15, 0.3),
+        legend.title = element_text(margin = margin(0, 0, 5, 0, "pt")))
 
 ```
 
