@@ -1,6 +1,4 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # noradplot <img src="man/figures/sticker.png" align="right" width="120"/>
 
 ## Overview
@@ -17,9 +15,10 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 
 ``` r
 library(ggplot2)
+#> Warning: package 'ggplot2' was built under R version 4.2.3
 library(noradplot)
 
-ggnorad("light")
+ggnorad("default")
 
 ggplot(mpg, aes(displ, hwy, color = class)) + 
   geom_point() +
@@ -86,16 +85,16 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
 
 ``` r
 library(sf)
-#> Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE
-library(rnaturalearth)
+#> Warning: package 'sf' was built under R version 4.2.3
+#> Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE
 
 ggnorad(style = "maplight")
-world <- ne_countries(returnclass = "sf")
-world <- st_transform(world, "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +R=6371000 +units=m +no_defs +type=crs")
-world <- world[world$admin != "Antarctica", ]
-world$rand <- runif(nrow(world), 1, 1000)
+data(world_map)
+world_map <- st_transform(world_map, "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +R=6371000 +units=m +no_defs +type=crs")
+world_map <- world_map[world_map$admin != "Antarctica", ]
+world_map$rand <- runif(nrow(world_map), 1, 1000)
 
-ggplot(world) + 
+ggplot(world_map) + 
   geom_sf(aes(fill = rand)) +
   scale_fill_norad_binned() +
   guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
@@ -107,11 +106,10 @@ ggplot(world) +
 
 ``` r
 library(sf)
-library(rnaturalearth)
 
 ggnorad(style = "mapdark")
 
-ggplot(world) + 
+ggplot(world_map) + 
   geom_sf(aes(fill = rand)) + 
   scale_fill_norad_binned("browns") +
   guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
