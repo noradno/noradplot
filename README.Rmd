@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -27,6 +25,7 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 ## Examples
 
 ### Default theme, suitable for reports
+
 ```{r example1}
 #| fig.width: 10
 #| fig.height: 6
@@ -34,7 +33,7 @@ Norads colour palette and plot style for creating ggplot2 graphics.
 library(ggplot2)
 library(noradplot)
 
-ggnorad("light")
+ggnorad("default")
 
 ggplot(mpg, aes(displ, hwy, color = class)) + 
   geom_point() +
@@ -45,6 +44,7 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
 ```
 
 ### Colorful theme, suitable for presentations
+
 ```{r example2}
 #| fig.width: 16
 #| fig.height: 8
@@ -102,19 +102,18 @@ ggplot(gdppc, aes(reorder(incomegroup, -gdppc), gdppc)) +
 ```
 
 ```{r example5}
-#| fig.width: 16
-#| fig.height: 7
+#| fig.width: 8
+#| fig.height: 4
 
 library(sf)
-library(rnaturalearth)
 
 ggnorad(style = "maplight")
-world <- ne_countries(returnclass = "sf")
-world <- st_transform(world, "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +R=6371000 +units=m +no_defs +type=crs")
-world <- world[world$admin != "Antarctica", ]
-world$rand <- runif(nrow(world), 1, 1000)
+data(world_map)
+world_map <- st_transform(world_map, "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +R=6371000 +units=m +no_defs +type=crs")
+world_map <- world_map[world_map$admin != "Antarctica", ]
+world_map$rand <- runif(nrow(world_map), 1, 1000)
 
-ggplot(world) + 
+ggplot(world_map) + 
   geom_sf(aes(fill = rand)) +
   scale_fill_norad_binned() +
   guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
@@ -124,15 +123,14 @@ ggplot(world) +
 ```
 
 ```{r example6}}
-#| fig.width: 16
-#| fig.height: 7
+#| fig.width: 8
+#| fig.height: 4
 
 library(sf)
-library(rnaturalearth)
 
 ggnorad(style = "mapdark")
 
-ggplot(world) + 
+ggplot(world_map) + 
   geom_sf(aes(fill = rand)) + 
   scale_fill_norad_binned("browns") +
   guides(fill = guide_colorsteps(title = "Random number", show.limits = TRUE)) +
