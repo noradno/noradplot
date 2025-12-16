@@ -9,7 +9,8 @@
 
 ggnorad <- function(style = "default", norad_colors = TRUE) {
 
-  showtext::showtext_auto()
+  #showtext::showtext_auto()
+  #showtext::showtext_opts(dpi = 300)
 
   options(scipen = 999)
   fonts_dir <- system.file("fonts", package = "noradplot")
